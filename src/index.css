@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cafe-primary: #F25420;
+    --cafe-accent: #DDF247;
+    --paper-bg: #F7F3E3;
+    --paper-card: #FFFFFF;
+    --ink-dark: #1A1816;
+    --ink-muted: #666056;
+  }
+
+  html {
+    font-family: 'Vazirmatn', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    direction: rtl;
+    background-color: var(--paper-bg);
+    color: var(--ink-dark);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: var(--paper-bg);
+    background-image: linear-gradient(
+      -30deg,
+      transparent 0%,
+      transparent 44%,
+      rgba(255, 255, 255, 0.42) 44%,
+      rgba(255, 255, 255, 0.42) 56%,
+      transparent 56%,
+      transparent 100%
+    );
+    background-attachment: fixed;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Neo-brutalist tactile sticker card */
+.pop-card {
+  background-color: #FFFFFF;
+  border: 2px solid #1A1816;
+  box-shadow: 4px 4px 0px #1A1816;
+}
+
+.pop-card-lg {
+  background-color: #FFFFFF;
+  border: 2px solid #1A1816;
+  box-shadow: 6px 6px 0px #1A1816;
+}
+
+.pop-btn {
+  border: 2px solid #1A1816;
+  box-shadow: 3px 3px 0px #1A1816;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.pop-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #1A1816;
+}
+
+.pop-input {
+  background-color: #FFFFFF;
+  border: 2px solid #1A1816;
+  box-shadow: 3px 3px 0px #1A1816;
+}
+
+.pop-input:focus {
+  outline: none;
+  border-color: #F25420;
+  box-shadow: 3px 3px 0px #F25420;
+}
+
+/* Perforated ticket stub divider with side cutouts */
+.ticket-divider {
+  position: relative;
+  border-top: 2px dashed rgba(26, 24, 22, 0.25);
+}
+
+.ticket-divider::before,
+.ticket-divider::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background-color: var(--paper-bg);
+  border: 2px solid #1A1816;
+}
+
+.ticket-divider::before {
+  right: -28px;
+}
+
+.ticket-divider::after {
+  left: -28px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
